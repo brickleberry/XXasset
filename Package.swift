@@ -22,9 +22,9 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "XXasset",
-            dependencies: ["SwiftShell", "Commander"]),
-        .testTarget(
-            name: "XXassetTests",
-            dependencies: ["XXasset"]),
+            dependencies: ["SwiftShell", "Commander"])
+//        .testTarget(
+//            name: "XXassetTests",
+//            dependencies: ["XXasset"]),
     ]
 )
