@@ -33,7 +33,7 @@ func replace(at: URL, to: URL) throws {
             let isDirectory = resourceValues.isDirectory,
             !isDirectory,
             let name = resourceValues.name,
-            name.hasSuffix(".png") else {
+            name.hasSuffix(".png") || name.hasSuffix(".svg") || name.hasSuffix(".pdf") else {
                 continue
         }
         let sourceURL = at.appendingPathComponent(name)
