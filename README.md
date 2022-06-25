@@ -11,8 +11,7 @@ $ mint install brickleberry/XXasset
 ## Usage
 ```
 1.安装完mint 工具后需要配置下bash_profile $path路径
-2.原来swift 工具只会导出png 改造了一下也可以导出pdf 和 svg
-3. 使用很简单支持导出和替换, 一行工具搞定!👏🏻👏🏻👏🏻
+2.原版swift 工具只会导出png 改造了一下也可以导出/替换 pdf和svg 文件, 一行工具搞定!👏🏻👏🏻👏🏻
 ```
 
 ```sh
