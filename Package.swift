@@ -4,12 +4,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "Xasset",
+    name: "XXasset",
     platforms: [
         .macOS(.v10_13),
     ],
     products: [
-        .executable(name: "xasset", targets: ["Xasset"]),
+        .executable(name: "xxasset", targets: ["XXasset"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -21,10 +21,10 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
-            name: "Xasset",
+            name: "XXasset",
             dependencies: ["SwiftShell", "Commander"]),
         .testTarget(
-            name: "XassetTests",
-            dependencies: ["Xasset"]),
+            name: "XXassetTests",
+            dependencies: ["XXasset"]),
     ]
 )
