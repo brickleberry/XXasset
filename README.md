@@ -1,16 +1,16 @@
-# Xasset
+# XXasset
 
 Export images from xcassets and replace images to xcassets.
 
 ## Installing
 ### [Mint](https://github.com/yonaskolb/mint)
 ```
-$ mint install brickleberry/Xasset
+$ mint install brickleberry/XXasset
 ```
 ## Usage
 ```sh
 # Export images
-xasset export ~/Foo.xcassets ~/FooImages
+xxasset export ~/Foo.xcassets ~/FooImages
 # Replace images
-xasset replace ~/FooImages ~/Foo.xcassets
+xxasset replace ~/FooImages ~/Foo.xcassets
 ```
