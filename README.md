@@ -5,7 +5,7 @@ Export images from xcassets and replace images to xcassets.
 ## Installing
 ### [Mint](https://github.com/yonaskolb/mint)
 ```
-$ mint install KelaKing/Xasset
+$ mint install brickleberry/Xasset
 ```
 ## Usage
 ```sh
