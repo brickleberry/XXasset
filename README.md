@@ -27,5 +27,5 @@ xxasset replace ~/FooImages ~/Foo.xcassets
 ```
 
 ## 其他
-如果本地编译的包指向还是原来的命令工具, 可以直接把路径下的可执行文件替换成源码里的xxasset
+如果本地编译的包指向还是原来的命令工具, 可以吧源码里编译好的xxasset替换本地类似路径下的可执行文件
 <img width="1233" alt="截屏2022-06-25 14 30 27" src="https://user-images.githubusercontent.com/6902330/175761543-8970dd2c-659b-4f57-a56f-a3c95958f0c6.png">
