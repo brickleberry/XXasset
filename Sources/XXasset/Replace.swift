@@ -1,5 +1,5 @@
 //
-//  Replace.swift
+//  Export.swift
 //  Xasset
 //
 //  Created by KelaKing on 2019/12/10.
@@ -8,18 +8,20 @@
 import Foundation
 import SwiftShell
 
-func replace(at: URL, to: URL) throws {
+func export(at: URL, to: URL) throws {
     guard Files.fileExists(atPath: at.path) else {
         exit(errormessage: "\(at) no exist")
     }
-    guard Files.fileExists(atPath: to.path) else {
-        exit(errormessage: "\(to) no exist")
+
+    // Create output directory if not exist.
+    if !Files.fileExists(atPath: to.path) {
+        try Files.createDirectory(atPath: to.path, withIntermediateDirectories: true, attributes: nil)
     }
 
     let resourceKeys: [URLResourceKey] = [.nameKey, .isDirectoryKey]
 
     let xcassetEnumerator = Files.enumerator(
-        at: to,
+        at: at,
         includingPropertiesForKeys: resourceKeys,
         options: [
             .skipsHiddenFiles,
@@ -33,16 +35,13 @@ func replace(at: URL, to: URL) throws {
             let isDirectory = resourceValues.isDirectory,
             !isDirectory,
             let name = resourceValues.name,
-            name.hasSuffix(".png") || name.hasSuffix(".svg") || name.hasSuffix(".pdf") else {
+            name.hasSuffix(".png") || name.hasSuffix(".svg") || name.hasSuffix(".pdf")
+            else {
                 continue
         }
-        let sourceURL = at.appendingPathComponent(name)
-        if Files.fileExists(atPath: sourceURL.path) {
-            try Files.removeItem(at: fileURL)
-            try Files.copyItem(at: sourceURL, to: fileURL)
-            count += 1
-        }
-
+        let outputURL = to.appendingPathComponent(name)
+        try Files.copyItem(at: fileURL, to: outputURL)
+        count += 1
     }
-    main.stdout.print("replace \(count) images 👏👏👏")
+    main.stdout.print("export \(count) images 👏 👏 👏")
 }
