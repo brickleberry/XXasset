@@ -44,5 +44,5 @@ func replace(at: URL, to: URL) throws {
         }
 
     }
-    main.stdout.print("replace \(count) images 👏")
+    main.stdout.print("replace \(count) images 👏👏👏")
 }
