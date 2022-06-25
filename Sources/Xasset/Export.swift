@@ -28,19 +28,19 @@ func export(at: URL, to: URL) throws {
         ],
         errorHandler: nil
     )!
-
+//name.hasSuffix(".png") && name.hasSuffix(".svg") && name.hasSuffix(".pdf")
     var count = 0
     for case let fileURL as URL in xcassetEnumerator {
         guard let resourceValues = try? fileURL.resourceValues(forKeys: Set(resourceKeys)),
             let isDirectory = resourceValues.isDirectory,
             !isDirectory,
             let name = resourceValues.name,
-            name.hasSuffix(".png") && name.hasSuffix(".svg") && name.hasSuffix(".pdf") else {
+            else {
                 continue
         }
         let outputURL = to.appendingPathComponent(name)
         try Files.copyItem(at: fileURL, to: outputURL)
         count += 1
     }
-    main.stdout.print("export \(count) images 👏")
+    main.stdout.print("export \(count) images 👏 👏 👏")
 }
